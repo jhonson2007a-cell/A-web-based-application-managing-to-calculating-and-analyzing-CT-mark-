@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CT Result Analysis</title>
+
+  <!-- CSS File -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <!-- =====================================================
+       AUTHENTICATION PAGE
+       ===================================================== -->
+  <section id="authPage" class="auth-page">
+
+    <div class="auth-card">
+
+      <!-- Website Branding -->
+      <div class="brand">
+
+        <div class="brand-icon">
+          📊
+        </div>
+
+        <div>
+          <h1>CT Result Analysis</h1>
+          <p>Smart Academic Performance Management</p>
+        </div>
+
+      </div>
+
+
+      <!-- Login / Register Tabs -->
+      <div class="tabs">
+
+        <button
+          class="tab active"
+          data-auth="login">
+          Login
+        </button>
+
+        <button
+          class="tab"
+          data-auth="register">
+          Register
+        </button>
+
+      </div>
+
+
+      <!-- =================================================
+           LOGIN FORM
+           ================================================= -->
+      <form id="loginForm" class="auth-form">
+
+        <!-- College ID -->
+        <label>
+          College ID / Employee ID
+
+          <input
+            id="loginId"
+            type="text"
+            placeholder="Enter your college ID"
+            required>
+        </label>
+
+
+        <!-- Password -->
+        <label>
+          Password
+
+          <input
+            id="loginPassword"
+            type="password"
+            placeholder="Enter password"
+            required>
+        </label>
+
+
+        <!-- Role -->
+        <label>
+          Role
+
+          <select id="loginRole">
+
+            <option value="student">
+              Student
+            </option>
+
+            <option value="teacher">
+              Teacher
+            </option>
+
+            <option value="admin">
+              Admin
+            </option>
+
+          </select>
+
+        </label>
+
+
+        <!-- Login Button -->
+        <button
+          class="primary-btn"
+          type="submit">
+
+          Login
+
+        </button>
+
+
+        <p class="demo-note">
+          Demo: Any ID and password will open
+          the selected role dashboard.
+        </p>
+
+      </form>
+
+
+      <!-- =================================================
+           REGISTRATION FORM
+           ================================================= -->
+      <form
+        id="registerForm"
+        class="auth-form hidden">
+
+        <!-- Register Role -->
+        <label>
+          Register As
+
+          <select id="regRole">
+
+            <option value="student">
+              Student
+            </option>
+
+            <option value="teacher">
+              Teacher
+            </option>
+
+          </select>
+
+        </label>
+
+
+        <!-- College ID -->
+        <label>
+          College ID / Library Card ID
+
+          <input
+            id="regId"
+            type="text"
+            placeholder="Enter official ID"
+            required>
+
+        </label>
+
+
+        <!-- Name -->
+        <label>
+          Full Name
+
+          <input
+            id="regName"
+            type="text"
+            placeholder="Enter full name"
+            required>
+
+        </label>
+
+
+        <!-- Email -->
+        <label>
+          College Email
+
+          <input
+            id="regEmail"
+            type="email"
+            placeholder="name@college.edu"
+            required>
+
+        </label>
+
+
+        <!-- Phone -->
+        <label>
+          Phone Number
+
+          <input
+            id="regPhone"
+            type="tel"
+            placeholder="Phone number">
+
+        </label>
+
+
+        <!-- =================================================
+             STUDENT REGISTRATION DETAILS
+             ================================================= -->
+        <div id="studentFields">
+
+          <!-- Address -->
+          <label>
+            Address
+
+            <input
+              id="regAddress"
+              type="text"
+              placeholder="Enter address">
+
+          </label>
+
+
+          <!-- Branch and Class -->
+          <div class="two-col">
+
+            <label>
+              Branch / Department
+
+              <input
+                id="regBranch"
+                type="text"
+                placeholder="CSE">
+
+            </label>
+
+
+            <label>
+              Class
+
+              <input
+                id="regClass"
+                type="text"
+                placeholder="BCA 2nd Year">
+
+            </label>
+
+          </div>
+
+
+          <!-- Section and Semester -->
+          <div class="two-col">
+
+            <label>
+              Section
+
+              <input
+                id="regSection"
+                type="text"
+                placeholder="A">
+
+            </label>
+
+
+            <label>
+              Semester
+
+              <input
+                id="regSemester"
+                type="text"
+                placeholder="3">
+
+            </label>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             TEACHER REGISTRATION DETAILS
+             ================================================= -->
+        <div
+          id="teacherFields"
+          class="hidden">
+
+          <label>
+            Department
+
+            <input
+              id="regDepartment"
+              type="text"
+              placeholder="Computer Science">
+
+          </label>
+
+        </div>
+
+
+        <!-- Password Section -->
+        <div class="two-col">
+
+          <label>
+            Password
+
+            <input
+              id="regPassword"
+              type="password"
+              required>
+
+          </label>
+
+
+          <label>
+            Confirm Password
+
+            <input
+              id="regConfirmPassword"
+              type="password"
+              required>
+
+          </label>
+
+        </div>
+
+
+        <!-- Register Button -->
+        <button
+          class="primary-btn"
+          type="submit">
+
+          Create Account
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       MAIN APPLICATION
+       ===================================================== -->
+
+  <section
+    id="appPage"
+    class="app hidden">
+
+
+    <!-- =================================================
+         SIDEBAR
+         ================================================= -->
+
+    <aside class="sidebar">
+
+      <!-- Sidebar Branding -->
+      <div class="side-brand">
+
+        <div class="brand-icon small">
+          📊
+        </div>
+
+        <strong>
+          CT Analysis
+        </strong>
+
+      </div>
+
+
+      <!-- Navigation Menu -->
+      <nav id="navMenu">
+
+        <!-- Navigation buttons will be
+             generated using JavaScript -->
+
+      </nav>
+
+
+      <!-- Logout -->
+      <button
+        id="logoutBtn"
+        class="logout">
+
+        ↪ Logout
+
+      </button>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN CONTENT
+         ================================================= -->
+
+    <main class="main">
+
+
+      <!-- =================================================
+           TOP BAR
+           ================================================= -->
+
+      <header class="topbar">
+
+        <div>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="menuBtn"
+            class="menu-btn">
+
+            ☰
+
+          </button>
+
+
+          <!-- Page Title -->
+          <h2 id="pageTitle">
+            Dashboard
+          </h2>
+
+
+          <!-- Page Description -->
+          <p id="welcomeText">
+            Academic performance overview
+          </p>
+
+        </div>
+
+
+        <!-- User Information -->
+        <div class="user-chip">
+
+          <!-- User Avatar -->
+          <span id="userAvatar">
+            U
+          </span>
+
+
+          <div>
+
+            <strong id="userName">
+              User
+            </strong>
+
+            <small id="userRole">
+              Student
+            </small>
+
+          </div>
+
+        </div>
+
+      </header>
+
+
+
+      <!-- =================================================
+           DYNAMIC PAGE CONTENT
+           ================================================= -->
+
+      <div id="content">
+
+        <!-- Dashboard / Results /
+             Analysis / Reports etc.
+             will be loaded here using JavaScript -->
+
+      </div>
+
+
+    </main>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>
