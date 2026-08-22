@@ -1,0 +1,1255 @@
+/* =========================================================
+   CT RESULT ANALYSIS WEBSITE
+   Main CSS File
+   ========================================================= */
+
+
+/* =========================================================
+   1. GLOBAL RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   2. ROOT VARIABLES
+   ========================================================= */
+
+:root {
+    --primary: #4f46e5;
+    --primary-light: #6366f1;
+
+    --background: #f5f7fb;
+    --card: #ffffff;
+
+    --text: #172033;
+    --muted: #697386;
+
+    --border: #e6e9f0;
+
+    --success: #15803d;
+    --danger: #dc2626;
+    --warning: #b45309;
+
+    --sidebar: #111827;
+}
+
+
+/* =========================================================
+   3. BODY
+   ========================================================= */
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   4. COMMON ELEMENTS
+   ========================================================= */
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   5. AUTHENTICATION PAGE
+   ========================================================= */
+
+.auth-page {
+    min-height: 100vh;
+
+    display: grid;
+    place-items: center;
+
+    padding: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #f8fafc
+        );
+}
+
+
+/* =========================================================
+   6. AUTH CARD
+   ========================================================= */
+
+.auth-card {
+    width: min(100%, 620px);
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 20px 60px rgba(15, 23, 42, 0.10);
+}
+
+
+/* =========================================================
+   7. BRAND
+   ========================================================= */
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+
+.brand h1 {
+    font-size: 25px;
+}
+
+
+.brand p {
+    font-size: 13px;
+
+    color: var(--muted);
+}
+
+
+.brand-icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-light)
+        );
+
+    display: grid;
+
+    place-items: center;
+
+    color: white;
+
+    font-size: 24px;
+}
+
+
+/* Small logo */
+
+.brand-icon.small {
+    width: 38px;
+    height: 38px;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   8. LOGIN / REGISTER TABS
+   ========================================================= */
+
+.tabs {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: #f1f3f9;
+
+    padding: 4px;
+
+    border-radius: 12px;
+
+    margin-bottom: 22px;
+}
+
+
+.tab {
+    padding: 10px;
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: var(--muted);
+}
+
+
+.tab.active {
+    background: white;
+
+    color: var(--primary);
+
+    font-weight: 700;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   9. AUTH FORM
+   ========================================================= */
+
+.auth-form {
+    display: grid;
+
+    gap: 14px;
+}
+
+
+.auth-form label,
+.field {
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #374151;
+}
+
+
+/* =========================================================
+   10. INPUTS
+   ========================================================= */
+
+.auth-form input,
+.auth-form select,
+.field input,
+.field select,
+.field textarea {
+
+    width: 100%;
+
+    margin-top: 6px;
+
+    padding: 11px 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: white;
+
+    color: var(--text);
+
+    transition: 0.2s;
+}
+
+
+.auth-form input:focus,
+.auth-form select:focus,
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(79, 70, 229, 0.10);
+}
+
+
+/* =========================================================
+   11. TWO COLUMN FORM
+   ========================================================= */
+
+.two-col {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   12. PRIMARY BUTTON
+   ========================================================= */
+
+.primary-btn {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-light)
+        );
+
+    color: white;
+
+    padding: 12px 16px;
+
+    border-radius: 10px;
+
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+
+.primary-btn:hover {
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(79, 70, 229, 0.25);
+}
+
+
+/* =========================================================
+   13. DEMO NOTE
+   ========================================================= */
+
+.demo-note {
+
+    font-size: 12px;
+
+    color: var(--muted);
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   14. MAIN APPLICATION
+   ========================================================= */
+
+.app {
+
+    min-height: 100vh;
+
+    display: flex;
+}
+
+
+/* =========================================================
+   15. SIDEBAR
+   ========================================================= */
+
+.sidebar {
+
+    width: 245px;
+
+    background: var(--sidebar);
+
+    color: #d1d5db;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    position: fixed;
+
+    inset: 0 auto 0 0;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   16. SIDEBAR BRAND
+   ========================================================= */
+
+.side-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: white;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   17. SIDEBAR NAVIGATION
+   ========================================================= */
+
+.sidebar nav {
+
+    display: grid;
+
+    gap: 7px;
+}
+
+
+.nav-btn {
+
+    background: transparent;
+
+    color: #cbd5e1;
+
+    text-align: left;
+
+    padding: 11px 12px;
+
+    border-radius: 9px;
+
+    transition: 0.2s;
+}
+
+
+.nav-btn:hover {
+
+    background: #312e81;
+
+    color: white;
+}
+
+
+.nav-btn.active {
+
+    background: #312e81;
+
+    color: white;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   18. LOGOUT BUTTON
+   ========================================================= */
+
+.logout {
+
+    margin-top: auto;
+
+    background: #1f2937;
+
+    color: white;
+
+    padding: 11px;
+
+    border-radius: 9px;
+
+    transition: 0.2s;
+}
+
+
+.logout:hover {
+
+    background: #374151;
+}
+
+
+/* =========================================================
+   19. MAIN CONTENT
+   ========================================================= */
+
+.main {
+
+    margin-left: 245px;
+
+    width: calc(100% - 245px);
+
+    padding: 24px;
+}
+
+
+/* =========================================================
+   20. TOP BAR
+   ========================================================= */
+
+.topbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 24px;
+}
+
+
+.topbar h2 {
+
+    font-size: 25px;
+}
+
+
+.topbar p {
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   21. MOBILE MENU BUTTON
+   ========================================================= */
+
+.menu-btn {
+
+    display: none;
+
+    background: transparent;
+
+    font-size: 22px;
+
+    margin-right: 8px;
+}
+
+
+/* =========================================================
+   22. USER CHIP
+   ========================================================= */
+
+.user-chip {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.user-chip span {
+
+    width: 40px;
+
+    height: 40px;
+
+    background: #e0e7ff;
+
+    color: #3730a3;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    font-weight: 800;
+}
+
+
+.user-chip small {
+
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   23. GRID SYSTEM
+   ========================================================= */
+
+.grid {
+
+    display: grid;
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   24. STATISTICS CARDS
+   ========================================================= */
+
+.stats {
+
+    grid-template-columns:
+        repeat(4, 1fr);
+}
+
+
+.stat-card {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    transition: 0.2s;
+}
+
+
+.stat-card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.07);
+}
+
+
+.stat-card .icon {
+
+    font-size: 24px;
+}
+
+
+.stat-card h3 {
+
+    font-size: 25px;
+
+    margin: 7px 0;
+}
+
+
+.stat-card p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   25. GENERAL CARD
+   ========================================================= */
+
+.card {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 18px;
+}
+
+
+/* =========================================================
+   26. DASHBOARD GRID
+   ========================================================= */
+
+.dashboard-grid {
+
+    grid-template-columns:
+        1.4fr 1fr;
+
+    margin-top: 16px;
+}
+
+
+/* =========================================================
+   27. SECTION TITLE
+   ========================================================= */
+
+.section-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+
+.section-title h3 {
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   28. MUTED TEXT
+   ========================================================= */
+
+.muted {
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   29. TABLE
+   ========================================================= */
+
+.table-wrap {
+
+    overflow-x: auto;
+}
+
+
+.table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    font-size: 13px;
+}
+
+
+.table th,
+.table td {
+
+    text-align: left;
+
+    padding: 12px;
+
+    border-bottom:
+        1px solid var(--border);
+
+    white-space: nowrap;
+}
+
+
+.table th {
+
+    color: var(--muted);
+
+    font-weight: 700;
+
+    background: #fafbfc;
+}
+
+
+.table tbody tr:hover {
+
+    background: #f8fafc;
+}
+
+
+/* =========================================================
+   30. STATUS BADGES
+   ========================================================= */
+
+.badge {
+
+    padding: 4px 8px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.pass {
+
+    background: #dcfce7;
+
+    color: var(--success);
+}
+
+
+.fail {
+
+    background: #fee2e2;
+
+    color: var(--danger);
+}
+
+
+.pending {
+
+    background: #fef3c7;
+
+    color: var(--warning);
+}
+
+
+/* =========================================================
+   31. PERFORMANCE BAR CHART
+   ========================================================= */
+
+.bar-chart {
+
+    display: flex;
+
+    align-items: end;
+
+    gap: 15px;
+
+    height: 190px;
+
+    padding: 10px 8px 0;
+}
+
+
+.bar {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: end;
+
+    align-items: center;
+
+    height: 100%;
+
+    gap: 7px;
+}
+
+
+.bar span {
+
+    font-size: 11px;
+
+    color: var(--muted);
+}
+
+
+.bar i {
+
+    display: block;
+
+    width: 38px;
+
+    max-width: 70%;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--primary-light),
+            var(--primary)
+        );
+
+    border-radius:
+        7px 7px 0 0;
+
+    transition: 0.3s;
+}
+
+
+.bar i:hover {
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   32. TOOLBAR
+   ========================================================= */
+
+.toolbar {
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 16px;
+}
+
+
+.toolbar input,
+.toolbar select {
+
+    padding: 10px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    background: white;
+
+    outline: none;
+}
+
+
+/* =========================================================
+   33. NORMAL BUTTON
+   ========================================================= */
+
+.btn {
+
+    padding: 9px 13px;
+
+    border-radius: 9px;
+
+    background: #eef2ff;
+
+    color: #3730a3;
+
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+
+.btn:hover {
+
+    transform: translateY(-1px);
+}
+
+
+.btn.success {
+
+    background: #dcfce7;
+
+    color: #166534;
+}
+
+
+.btn.danger {
+
+    background: #fee2e2;
+
+    color: #991b1b;
+}
+
+
+/* =========================================================
+   34. FORM GRID
+   ========================================================= */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+
+.full {
+
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   35. PROFILE
+   ========================================================= */
+
+.profile {
+
+    display: grid;
+
+    grid-template-columns:
+        120px 1fr;
+
+    gap: 20px;
+}
+
+
+.profile-avatar {
+
+    width: 100px;
+
+    height: 100px;
+
+    border-radius: 20px;
+
+    background: #e0e7ff;
+
+    color: #3730a3;
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 35px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   36. EMPTY STATE
+   ========================================================= */
+
+.empty {
+
+    text-align: center;
+
+    padding: 35px;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   37. TOAST NOTIFICATION
+   ========================================================= */
+
+.toast {
+
+    position: fixed;
+
+    right: 20px;
+
+    top: 20px;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 12px 16px;
+
+    border-radius: 10px;
+
+    z-index: 99;
+
+    transform:
+        translateY(-120px);
+
+    transition: 0.3s;
+}
+
+
+.toast.show {
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   38. RESPONSIVE DESIGN
+   Tablet
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .stats {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .dashboard-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .form-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   39. MOBILE DESIGN
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* Sidebar */
+
+    .sidebar {
+
+        transform:
+            translateX(-100%);
+
+        transition: 0.25s;
+    }
+
+
+    .sidebar.open {
+
+        transform:
+            translateX(0);
+    }
+
+
+    /* Main */
+
+    .main {
+
+        margin-left: 0;
+
+        width: 100%;
+
+        padding: 16px;
+    }
+
+
+    /* Menu button */
+
+    .menu-btn {
+
+        display: inline-block;
+    }
+
+
+    /* Page title */
+
+    .topbar h2 {
+
+        display: inline;
+
+        font-size: 21px;
+    }
+
+
+    .topbar {
+
+        align-items:
+            flex-start;
+    }
+
+
+    /* Hide desktop user information */
+
+    .user-chip div {
+
+        display: none;
+    }
+
+
+    /* Statistics */
+
+    .stats {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    /* Forms */
+
+    .two-col {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .form-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /* Profile */
+
+    .profile {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /* Chart */
+
+    .bar-chart {
+
+        gap: 7px;
+    }
+
+
+    .bar i {
+
+        width: 25px;
+    }
+
+
+    /* Authentication */
+
+    .auth-card {
+
+        padding: 22px;
+
+        border-radius: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   40. SMALL MOBILE DEVICES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .auth-page {
+
+        padding: 12px;
+    }
+
+
+    .auth-card {
+
+        padding: 18px;
+    }
+
+
+    .brand h1 {
+
+        font-size: 20px;
+    }
+
+
+    .brand p {
+
+        font-size: 11px;
+    }
+
+
+    .stats {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .topbar h2 {
+
+        font-size: 18px;
+    }
+
+}
